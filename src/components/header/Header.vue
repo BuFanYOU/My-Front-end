@@ -141,7 +141,6 @@ export default {
       this.city = city;
     },
     goToPay () {
-      this.$router.push('/order');
     },
     myInfo () {
       this.$router.push('/home');
