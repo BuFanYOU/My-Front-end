@@ -5,41 +5,17 @@
         <Menu active-name="1-2" theme="light" width="auto" @on-select="onSelect">
           <div class="user-icon">
             <div class="user-img">
-              <img src="static/img/head.png">
+              <img src="static/img/head.jpg">
             </div>
-            <p>Gavin</p>
+            <p>系 统 管 理 员</p>
           </div>
           <Submenu name="1">
             <template slot="title">
-                <Icon type="location"></Icon>
-                <span>个人信息</span>
+                <Icon type="ios-bookmarks-outline"></Icon>
+                <span>用户管理</span>
             </template>
-            <MenuItem name="">个人信息</MenuItem>
-            <MenuItem name="myAddress">我的收货地址</MenuItem>
-            <MenuItem name="addAddress">添加收货地址</MenuItem>
-          </Submenu>
-          <Submenu name="2">
-            <template slot="title">
-                <Icon type="location"></Icon>
-                <span>我的账户</span>
-            </template>
-            <MenuItem name="">账户信息</MenuItem>
-            <MenuItem name="">我的钱包</MenuItem>
-            <MenuItem name="">银行卡信息</MenuItem>
-          </Submenu>
-          <Submenu name="3">
-            <template slot="title">
-                <Icon type="ios-cart"></Icon>
-                <span>我的进货单</span>
-            </template>
-            <MenuItem name="myShoppingCart">我的进货单</MenuItem>
-          </Submenu>
-          <Submenu name="4">
-            <template slot="title">
-                <Icon type="ios-cart"></Icon>
-                <span>我的交易</span>
-            </template>
-            <MenuItem name="">交易列表</MenuItem>
+            <MenuItem name="myStore">所有用户列表</MenuItem>
+            <MenuItem name="user">封禁用户列表</MenuItem>
           </Submenu>
         </Menu>
       </Sider>
@@ -60,22 +36,20 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Management',
   data () {
     return {
-      activeTitle: '我的进货单',
+      activeTitle: '所有用户列表',
       bar: {
-        'myAddress': '我的收货地址',
-        'addAddress': '添加收货地址',
-        'myOrder': '我的交易',
-        'myShoppingCart': '我的进货单'
+        'myStore': '所有用户列表',
+        'user': '封禁用户列表',
       }
     };
   },
   methods: {
     onSelect (name) {
       this.activeTitle = this.bar[name];
-      this.$router.push(`/home/${name}`);
+      this.$router.push(`/Management/${name}`);
     }
   }
 };

@@ -21,6 +21,10 @@ const MyShoppingCart = resolve => require(['@/components/home/MyShoppingCart'], 
 const Merchant = resolve => require(['@/components/Merchant'], resolve);
 const Settlement = resolve => require(['@/components/Settlement'], resolve);
 const Transaction = resolve => require(['@/components/Transaction'], resolve);
+const Management = resolve => require(['@/components/Management'], resolve);
+const MyStore = resolve => require(['@/components/Management/MyStore'], resolve);
+const User = resolve => require(['@/components/Management/User'], resolve);
+
 
 Vue.use(Router);
 
@@ -30,6 +34,28 @@ export default new Router({
       path: '/', // 首页
       name: 'Index',
       component: Index
+    },
+    {
+      path: '/Management', // 后台管理
+      name: 'Management',
+      component: Management,
+      children: [
+        {
+          path: '/',
+          name: 'MyStore',
+          component: MyStore
+        },
+        {
+          path: 'myStore',
+          name: 'MyStore',
+          component: MyStore
+        },
+        {
+          path: 'user',
+          name: 'User',
+          component: User
+        }
+      ]
     },
     {
       path: '/Login', // 登录

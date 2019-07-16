@@ -1,11 +1,9 @@
 <template>
   <div>
     <div class="nav-item">
-      <ul>
-        <li v-for="(item,index) in nav" :key="index">
-          <a href="/#/goodsList">{{item}}</a>
-        </li>
-      </ul>
+      <ul><li><router-link to="/">网站首页</router-link></li></ul>
+      <ul><li><router-link to="/goodsList">商品采购</router-link></li></ul>
+      <ul><li><router-link to="/">交易指南</router-link></li></ul>
     </div>
     <div class="nav-body">
       <div class="nav-content">
@@ -19,13 +17,6 @@
               </CarouselItem>
           </Carousel>
         </div>
-        <!-- <div class="nav-show">
-          <div class="nav-show-img" v-for="(item, index) in marketing.activity" :key="index">
-            <router-link to="/goodsList">
-              <img :src="item">
-            </router-link>
-          </div>
-        </div> -->
       </div>
     </div>
     <transition name="fade">

@@ -41,15 +41,17 @@
             </DropdownMenu>
           </Dropdown>
         </li>
+        <li><router-link to="/">网站导航</router-link></li>
+        <li><router-link to="/freeback">意见反馈</router-link></li>
         <li>
           <Dropdown  placement="bottom-start">
             <a href="javascript:void(0)">
-              <Icon type="ios-cart-outline"></Icon> 购物车
+              <Icon type="ios-cart-outline"></Icon> 进货单
             </a>
             <DropdownMenu slot="list">
               <div class="shopping-cart-null" v-show="shoppingCart.length <= 0">
                 <Icon type="ios-cart-outline" class="cart-null-icon"></Icon>
-                <span>你的购物车没有空空哦</span>
+                <span>你的进货单暂时没有东西</span>
                 <span>赶快去添加商品吧~</span>
               </div>
               <div class="shopping-cart-list" v-show="shoppingCart.length > 0">
@@ -88,9 +90,24 @@
             </DropdownMenu>
           </Dropdown>
         </li>
-        <li><router-link to="/">网站导航</router-link></li>
-        <li><router-link to="/freeback">意见反馈</router-link></li>
-        <li><router-link to="/">我的消息</router-link></li>
+        <li>
+          <Dropdown  placement="bottom-start">
+            <a href="javascript:void(0)">
+              <Icon type="chatbubble-working"></Icon> 消息
+            </a>
+            <DropdownMenu slot="list">
+              <div class="shopping-cart-null" v-show="shoppingCart.length <= 0">
+                <Icon type="chatbubble-working"></Icon>
+              </div>
+              
+                <div class="go-to-buy">
+                  <Button type="error" size="small" @click="goToPay">
+                    查看消息列表
+                  </Button>
+                </div>
+            </DropdownMenu>
+          </Dropdown>
+        </li>
       </ul>
     </div>
   </div>
